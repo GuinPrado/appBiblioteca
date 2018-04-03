@@ -14,13 +14,13 @@ function register(req, res) {
 
                 person
                     .save()
-                    .then(user => res.status(200).json({ message: `Usuário ${user.name} cadastrado com sucesso!` }))
+                    .then(user => res.status(200).json({ isValid: true, message: `Usuário ${user.name} cadastrado com sucesso!` }))
                     .catch(err => res.status(500).json(err))
             } else {
-                res.status(500).json({ message: 'Preencha todos os dados!' })
+                res.status(500).json({ isValid: false, message: 'Preencha todos os dados!' })
             }
         } else {
-            res.status(500).json({ message: 'Usuário já existe!' })
+            res.status(500).json({ isValid: false, message: 'Usuário já existe!' })
         }
     })
 }

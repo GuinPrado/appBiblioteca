@@ -10,4 +10,8 @@ const routes = express.Router()
 // USER
 routes.post('/user/register/', controlerUser.register)
 
+
+//LOGIN
+routes.post('/login/', controllerLogin.login)
+
 module.exports = routes

@@ -34,18 +34,18 @@
     <div class="space"></div>
     <div class="row">
         <div class="col col-center">
-            <form onsubmit="enviaLogin()">
+            <form method="post" id="loginForm">
                 <div class="list no-border opacity-60">
                     <div class="item icon ion-android-mail border-grey border-bottom">
-                        <input class="placeholder-white text-white" required type="email" placeholder="Enter your email">
+                        <input class="placeholder-white text-white" id="email" required type="email" placeholder="Enter your email">
                     </div>
                     <div class="item icon ion-android-lock border-grey border-bottom">
-                        <input class="placeholder-white text-white" required type="password" placeholder="Enter your password">
+                        <input class="placeholder-white text-white" id="password" required type="password" placeholder="Enter your password">
                     </div>
                 </div>
                 <div class="space"></div>
                 <div class="space"></div>
-                <button class="border-blue text-blue full">SIGN IN</button>
+                <button onclick="return enviaLogin()" class="border-blue text-blue full">SIGN IN</button>
             </form>
         </div>
     </div>

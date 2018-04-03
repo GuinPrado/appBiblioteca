@@ -1,10 +1,6 @@
 var URL_API = 'http://localhost:3000/API/V1'
 
 function register() {
-    var name = document.getElementById('name').value
-    var email = document.getElementById('email').value
-    var password = document.getElementById('password').value
-    var age = document.getElementById('age').value
     var obj = JSON.parse(JSON.stringify(MobileUI.objectByForm('registerForm')))
     MobileUI.ajax.post(URL_API + '/user/register/', obj, function (err, res) {
         if (err) {
@@ -18,5 +14,17 @@ function register() {
 }
 
 function enviaLogin() {
-
+    var obj = JSON.parse(JSON.stringify(MobileUI.objectByForm('loginForm')))
+    console.log(obj)
+    MobileUI.ajax.post(URL_API + '/login/', obj, function (err, res) {
+        console.log(res)
+        if (err) {
+            console.log('ERRO => ', err)
+            alert(res.body.message)
+        }
+        if (res.body.message) {
+            alert(res.body.message)
+        }
+    })
+    return false
 }
